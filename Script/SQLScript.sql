@@ -65,3 +65,7 @@ REFERENCES [dbo].[Book] ([BookId])
 ALTER TABLE [dbo].[OrderTable]  WITH CHECK ADD FOREIGN KEY([UserId])
 REFERENCES [dbo].[Account] ([UserId])
 
+ALTER TABLE [dbo].[Book]
+ADD UNIQUE ([BookName],[Author]);
+
+ALTER TABLE [dbo].[OrderTable] ALTER COLUMN [Status] VARCHAR(20);
