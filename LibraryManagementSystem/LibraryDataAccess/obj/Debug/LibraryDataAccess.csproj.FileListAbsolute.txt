@@ -1,0 +1,12 @@
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\bin\Debug\LibraryDataAccess.dll.config
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\bin\Debug\LibraryDataAccess.dll
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\bin\Debug\LibraryDataAccess.pdb
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\bin\Debug\EntityFramework.dll
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\bin\Debug\EntityFramework.xml
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.csprojAssemblyReference.cache
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.csproj.CoreCompileInputs.cache
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.csproj.CopyComplete
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.dll
+D:\LMS\bookish-lamp\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.pdb
