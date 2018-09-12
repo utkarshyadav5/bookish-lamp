@@ -32,7 +32,7 @@
     <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserId" Type="Int32" Nullable="false" />
     <Property Name="BookId" Type="Int32" Nullable="false" />
-    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" />
     <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="ReturnDate" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="Account" Relationship="Self.FK__OrderTabl__UserI__412EB0B6" FromRole="OrderTable" ToRole="Account" />

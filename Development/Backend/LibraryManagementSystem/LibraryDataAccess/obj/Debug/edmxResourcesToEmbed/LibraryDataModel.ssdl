@@ -29,7 +29,7 @@
     <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="BookId" Type="int" Nullable="false" />
-    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
     <Property Name="OrderDate" Type="date" Nullable="false" />
     <Property Name="ReturnDate" Type="date" Nullable="false" />
   </EntityType>
