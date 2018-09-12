@@ -33,3 +33,4 @@ D:\LMS\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAcces
 D:\LMS\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.csproj.CopyComplete
 D:\LMS\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.dll
 D:\LMS\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.pdb
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.csprojAssemblyReference.cache
