@@ -310,3 +310,15 @@ D:\LMS\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagemen
 D:\LMS\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CopyComplete
 D:\LMS\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.dll
 D:\LMS\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Cors.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Security.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Security.OAuth.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Owin.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\System.Web.Cors.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.xml
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Cors.xml
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Security.xml
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Security.OAuth.xml

@@ -10,6 +10,7 @@ namespace LibraryManagementSystem.Controllers
 {
     public class BookController : ApiController
     {
+        [Authorize]
         public IEnumerable<Book> GetBooks()
         {
             using (LMSEntities entities = new LMSEntities())
@@ -18,6 +19,7 @@ namespace LibraryManagementSystem.Controllers
             }
         }
 
+        [Authorize]
         public Book GetBookById(int id)
         {
 
@@ -26,6 +28,8 @@ namespace LibraryManagementSystem.Controllers
                  return entities.Books.FirstOrDefault(e=>e.BookId==id);
             }
         }
+
+        [Authorize]
         public Book GetBookByName(string bookName)
         {
 
@@ -35,6 +39,7 @@ namespace LibraryManagementSystem.Controllers
             }
         }
 
+        [Authorize(Roles = "admin")]
         public HttpResponseMessage Post([FromBody] Book book)
         {
             using(LMSEntities entities=new LMSEntities())
@@ -45,6 +50,8 @@ namespace LibraryManagementSystem.Controllers
                 return message;
             }
         }
+
+        [Authorize(Roles = "admin")]
         public HttpResponseMessage Delete(int id)
         {
             try
@@ -71,6 +78,7 @@ namespace LibraryManagementSystem.Controllers
             }
         }
 
+        [Authorize(Roles = "admin")]
         public HttpResponseMessage putBook(int id,[FromBody] Book book)
         {
             using(LMSEntities entities=new LMSEntities())
@@ -100,6 +108,8 @@ namespace LibraryManagementSystem.Controllers
 
             }
         }
+
+        [Authorize(Roles = "admin")]
         public HttpResponseMessage putBookCount(int id,int count)
         {
             using (LMSEntities entities = new LMSEntities())

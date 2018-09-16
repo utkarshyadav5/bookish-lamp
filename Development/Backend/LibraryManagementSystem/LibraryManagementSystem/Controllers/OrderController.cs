@@ -17,12 +17,14 @@ namespace LibraryManagementSystem.Controllers
         private LMSEntities db = new LMSEntities();
 
         // GET: api/Order
+        [Authorize(Roles = "admin")]
         public IQueryable<OrderTable> GetOrderTables()
         {
             return db.OrderTables;
         }
 
         // GET: api/Order/5
+        [Authorize]
         public IQueryable<OrderTable> GetOrderByUserId(int id)
         {
             return db.OrderTables.Where(e => e.UserId.Equals(id));
@@ -42,6 +44,7 @@ namespace LibraryManagementSystem.Controllers
         //}
 
         // PUT: api/Order/5
+        [Authorize(Roles = "admin")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutOrderTable(int id, OrderTable orderTable)
         {
@@ -77,6 +80,7 @@ namespace LibraryManagementSystem.Controllers
         }
 
         // POST: api/Order
+        [Authorize]
         [ResponseType(typeof(OrderTable))]
         public IHttpActionResult PostOrderTable(OrderTable orderTable)
         {
@@ -92,6 +96,7 @@ namespace LibraryManagementSystem.Controllers
         }
 
         // DELETE: api/Order/5
+        [Authorize]
         [ResponseType(typeof(OrderTable))]
         public IHttpActionResult DeleteOrderTable(int id)
         {
@@ -106,6 +111,7 @@ namespace LibraryManagementSystem.Controllers
 
             return Ok(orderTable);
         }
+
 
         protected override void Dispose(bool disposing)
         {
