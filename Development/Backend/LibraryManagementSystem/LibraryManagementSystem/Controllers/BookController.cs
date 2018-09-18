@@ -15,39 +15,75 @@ namespace LibraryManagementSystem.Controllers
         {
             using (LMSEntities entities = new LMSEntities())
             {
-                  return entities.Books.ToList();
+                return entities.Books.ToList();
+            }
+
+        }
+
+        [Authorize]
+        public HttpResponseMessage GetBookById(int id)
+        {
+            try
+            {
+                using (LMSEntities entities = new LMSEntities())
+                {
+                    var entity = entities.Books.FirstOrDefault(e => e.BookId == id);
+                    if (entity != null)
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK, entity);
+                    }
+                    else
+                    {
+                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book with id =" + id + " is not found");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
 
         [Authorize]
-        public Book GetBookById(int id)
+        public HttpResponseMessage GetBookByName(string bookName)
         {
-
-            using (LMSEntities entities = new LMSEntities())
+            try
             {
-                 return entities.Books.FirstOrDefault(e=>e.BookId==id);
+                using (LMSEntities entities = new LMSEntities())
+                {
+                    var entity = entities.Books.FirstOrDefault(e => e.BookName == bookName);
+                    if (entity != null)
+                    {
+                        return Request.CreateResponse(HttpStatusCode.OK, entity);
+                    }
+                    else
+                    {
+                        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book " + bookName + " is not found");
+                    }
+                }
             }
-        }
-
-        [Authorize]
-        public Book GetBookByName(string bookName)
-        {
-
-            using (LMSEntities entities = new LMSEntities())
+            catch (Exception ex)
             {
-                return entities.Books.FirstOrDefault(e => e.BookName == bookName);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
 
         [Authorize(Roles = "admin")]
         public HttpResponseMessage Post([FromBody] Book book)
         {
-            using(LMSEntities entities=new LMSEntities())
+            try
             {
-                entities.Books.Add(book);
-                entities.SaveChanges();
-                var message = Request.CreateResponse(HttpStatusCode.Created, book);
-                return message;
+                using (LMSEntities entities = new LMSEntities())
+                {
+                    entities.Books.Add(book);
+                    entities.SaveChanges();
+                    var message = Request.CreateResponse(HttpStatusCode.Created, book);
+                    return message;
+                }
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
 
@@ -79,11 +115,11 @@ namespace LibraryManagementSystem.Controllers
         }
 
         [Authorize(Roles = "admin")]
-        public HttpResponseMessage putBook(int id,[FromBody] Book book)
+        public HttpResponseMessage putBook(int id, [FromBody] Book book)
         {
-            using(LMSEntities entities=new LMSEntities())
+            try
             {
-                try
+                using (LMSEntities entities = new LMSEntities())
                 {
                     var entity = entities.Books.FirstOrDefault(e => e.BookId == id);
                     if (entity == null)
@@ -101,20 +137,19 @@ namespace LibraryManagementSystem.Controllers
                         return Request.CreateResponse(HttpStatusCode.OK, entity);
                     }
                 }
-                catch(Exception ex)
-                {
-                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
-                }
-
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
         }
 
         [Authorize(Roles = "admin")]
-        public HttpResponseMessage putBookCount(int id,int count)
+        public HttpResponseMessage putBookCount(int id, int count)
         {
-            using (LMSEntities entities = new LMSEntities())
+            try
             {
-                try
+                using (LMSEntities entities = new LMSEntities())
                 {
                     var entity = entities.Books.FirstOrDefault(e => e.BookId == id);
                     if (entity == null)
@@ -123,21 +158,19 @@ namespace LibraryManagementSystem.Controllers
                     }
                     else
                     {
-                        entity.AvailableNumber +=count;
+                        entity.AvailableNumber += count;
                         entity.Quantity += count;
                         entities.SaveChanges();
                         return Request.CreateResponse(HttpStatusCode.OK, entity);
                     }
                 }
-                catch (Exception ex)
-                {
-                    return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
-                }
 
             }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+
         }
-
-
-
     }
 }

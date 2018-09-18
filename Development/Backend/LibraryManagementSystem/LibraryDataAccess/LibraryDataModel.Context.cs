@@ -18,7 +18,6 @@ namespace LibraryDataAccess
         public LMSEntities()
             : base("name=LMSEntities")
         {
-            Configuration.ProxyCreationEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
