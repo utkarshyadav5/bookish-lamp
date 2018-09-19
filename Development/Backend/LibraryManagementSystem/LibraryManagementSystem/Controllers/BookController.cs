@@ -68,7 +68,7 @@ namespace LibraryManagementSystem.Controllers
             }
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public HttpResponseMessage Post([FromBody] Book book)
         {
             try
@@ -87,7 +87,7 @@ namespace LibraryManagementSystem.Controllers
             }
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public HttpResponseMessage Delete(int id)
         {
             try
@@ -114,7 +114,7 @@ namespace LibraryManagementSystem.Controllers
             }
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public HttpResponseMessage putBook(int id, [FromBody] Book book)
         {
             try
@@ -144,7 +144,7 @@ namespace LibraryManagementSystem.Controllers
             }
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public HttpResponseMessage putBookCount(int id, int count)
         {
             try
