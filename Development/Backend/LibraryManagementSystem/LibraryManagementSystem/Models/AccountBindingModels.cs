@@ -35,6 +35,10 @@ namespace LibraryManagementSystem.Models
     public class RegisterBindingModel
     {
         [Required]
+        [Display(Name = "UserRoles")]
+        public string UserRoles { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
 

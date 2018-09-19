@@ -17,7 +17,7 @@ namespace LibraryManagementSystem.Controllers
         private LMSEntities db = new LMSEntities();
 
         // GET: api/Order
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public IQueryable<OrderTable> GetOrderTables()
         {
             return db.OrderTables;
@@ -44,7 +44,7 @@ namespace LibraryManagementSystem.Controllers
         //}
 
         // PUT: api/Order/5
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutOrderTable(int id, OrderTable orderTable)
         {

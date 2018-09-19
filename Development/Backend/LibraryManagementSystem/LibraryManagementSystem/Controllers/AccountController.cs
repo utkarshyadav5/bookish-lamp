@@ -337,6 +337,7 @@ namespace LibraryManagementSystem.Controllers
                 return GetErrorResult(result);
             }
 
+            await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
             return Ok();
         }
 
