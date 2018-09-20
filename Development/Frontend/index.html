@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Library Management App</title>
+    <script src="scripts\lib\angular.min.js"></script>
+    <script src="scripts\lib\angular-route.min.js"></script>
+    <script src="scripts\lib\angular-cookies.min.js"></script>
+
+    <script src="scripts\main.js"></script>
+
+    <script src="scripts\book\BookModule.js"></script>
+    <script src="scripts\book\BookService.js"></script>
+    <script src="scripts\book\BookController.js"></script>
+
+    <script src="scripts\home\HomeModule.js"></script>
+    <script src="scripts\home\HomeController.js"></script>
+
+    <script src="scripts\catalogue\CatalogueModule.js"></script>
+    <script src="scripts\catalogue\CatalogueController.js"></script>
+    <script src="scripts\catalogue\CatalogueService.js"></script>
+
+    <script src="scripts\login\LoginModule.js"></script>
+    <script src="scripts\login\LoginController.js"></script>
+    <script src="scripts\login\LoginService.js"></script>
+
+    <script src="scripts\register\RegisterModule.js"></script>
+    <script src="scripts\register\RegisterController.js"></script>
+    <script src="scripts\register\RegisterService.js"></script>
+
+    <script src="scripts\notifications\NotificationModule.js"></script>
+    <script src="scripts\notifications\NotificationController.js"></script>
+    <script src="scripts\notifications\NotificationService.js"></script>
+
+    <script src="scripts\admin\AdminModule.js"></script>
+    <script src="scripts\admin\AdminController.js"></script>
+    <script src="scripts\admin\AdminService.js"></script>
+
+    <script src="scripts\bookshelf\BookShelfModule.js"></script>
+    <script src="scripts\bookshelf\BookShelfController.js"></script>
+    <script src="scripts\bookshelf\BookShelfService.js"></script>
+
+    <script src="scripts\requests\RequestModule.js"></script>
+    <script src="scripts\requests\RequestController.js"></script>
+    <script src="scripts\requests\RequestService.js"></script>
+
+    <script src="scripts\wishlist\WishlistModule.js"></script>
+    <script src="scripts\wishlist\WishlistController.js"></script>
+    <script src="scripts\wishlist\WishlistService.js"></script>
+
+    <link rel="stylesheet" href="bootstrap-materia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="styles/login.css">
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/login.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+</head>
+
+<body ng-app="App" ng-controller="MainController">
+
+    <!-- <div ng-if='isUserLoggedIn()' ng-include="'views/home/navbar.html'"></div> -->
+    <div class="container">
+        <!--TODO: set isLoggedIn to true once login is successful, make it false with successful logout-->
+        
+        <div ng-if='isUserLoggedIn()' ng-include="'views/home/navbar.html'"></div>
+        <div ng-view></div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

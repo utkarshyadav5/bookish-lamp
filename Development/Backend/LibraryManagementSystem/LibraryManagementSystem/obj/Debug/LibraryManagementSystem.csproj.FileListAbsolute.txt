@@ -129,3 +129,8 @@ D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSys
 D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CopyComplete
 D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.dll
 D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\System.Web.Cors.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\System.Web.Http.Cors.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\System.Web.Http.Cors.xml
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Cors.dll
+D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryManagementSystem\bin\Microsoft.Owin.Cors.xml
