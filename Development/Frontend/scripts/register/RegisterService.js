@@ -1,7 +1,7 @@
 angular.module('RegisterModule').service('RegisterService', ['$http', function ($http) {
 
-    var DOMAIN_NAME = 'http://localhost:59684/';
-    var REGISTER = 'users/register';
+    var DOMAIN_NAME = 'http://localhost:54580/';
+    var REGISTER = 'api/account/register';
     
     this.serviceWorks = function () {
         //console.log("regisetr service works");

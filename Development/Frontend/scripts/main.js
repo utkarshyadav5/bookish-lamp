@@ -83,17 +83,6 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
                 }
             }
         })
-        .when('/home/notifications', {
-            templateUrl: 'views/notifications/notifications.html',
-            resolve: {
-                app: function ($q) {
-                    var defer = $q.defer();
-                    if (isLoggedIn())
-                        defer.resolve();
-                    return defer.promise;
-                }
-            }
-        })
         .when('/home/admin', {
             templateUrl: 'views/admin/admin.html',
             resolve: {

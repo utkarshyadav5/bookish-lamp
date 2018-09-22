@@ -43,31 +43,30 @@ angular.module('CatalogueModule').controller('CatalogueController', ['$window', 
         $window.location.href = "#!/home/catalogue";
     };
 
-    getAllBooks = function () {
+    function getAllBooks() {
         console.log("getAllBooks() called");
         catalogueService.getAllBooks().then(
             (response) => {
                 $scope.booksList = response.data;
                 //$scope.adminStatus=AdminService.checkAdminStatus();
                 //console.log($scope.adminStatus);
-                console.log($scope.booksList);
             },
             (error) => {
                 console.log(error);
             }
         );
     };
-
+    
     // fetch all books once at page reload
     getAllBooks();
     console.log($scope.booksList);
 
     // periodically refresh books
-    //$interval(getAllBooks, BOOK_LIST_INTERVAL_IN_SECONDS * 1000);
+    // $interval(getAllBooks, BOOK_LIST_INTERVAL_IN_SECONDS * 1000);
 
-    $scope.issueBook = function (bookName) {
-        console.log("issue book " + bookName);
-        catalogueService.makeBookIssueRequest({ "Title": bookName });
+    $scope.issueBook = function (bookId) {
+        console.log("issue book " + bookId);
+        catalogueService.makeBookIssueRequest({ "BookId": bookId });
 
         // decrement quantity
         // for (var i in $scope.booksList) {
