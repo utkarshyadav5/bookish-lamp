@@ -15,7 +15,7 @@ namespace LibraryDataAccess
     public partial class OrderTable
     {
         public int OrderId { get; set; }
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public int BookId { get; set; }
         public string Status { get; set; }
         public System.DateTime OrderDate { get; set; }
