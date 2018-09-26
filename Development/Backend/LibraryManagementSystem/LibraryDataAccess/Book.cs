@@ -18,6 +18,7 @@ namespace LibraryDataAccess
         public Book()
         {
             this.OrderTables = new HashSet<OrderTable>();
+            this.Wishlists = new HashSet<Wishlist>();
         }
     
         public int BookId { get; set; }
@@ -29,5 +30,7 @@ namespace LibraryDataAccess
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderTable> OrderTables { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Wishlist> Wishlists { get; set; }
     }
 }

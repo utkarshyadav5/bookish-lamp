@@ -12,18 +12,14 @@ namespace LibraryDataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Role
+    public partial class Wishlist
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Role()
-        {
-            this.Accounts = new HashSet<Account>();
-        }
+        public int WishListId { get; set; }
+        public string UserId { get; set; }
+        public int BookId { get; set; }
+        public System.DateTime OrderDate { get; set; }
     
-        public int RoleId { get; set; }
-        public string Role1 { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual Book Book { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

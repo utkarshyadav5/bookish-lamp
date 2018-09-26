@@ -3,7 +3,7 @@ angular.module('BookShelfModule').service('BookShelfService', ['$http', '$cookie
     // send session id with the request
     $http.defaults.headers.common.SessionId = $cookies.get('session-id');
 
-    var DOMAIN_NAME = 'http://localhost:59684/';
+    var DOMAIN_NAME = 'http://localhost:54580/';
     var BOOK_SHELF = 'books/shelf';
     var RETURN_BOOK = 'books/return';
 

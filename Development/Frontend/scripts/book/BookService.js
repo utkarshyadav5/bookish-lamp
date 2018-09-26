@@ -1,6 +1,6 @@
 bookModule.service('BookService', ['$http', function ($http) {
 
-    var DOMAIN_NAME = 'http://localhost:59684/';
+    var DOMAIN_NAME = 'http://localhost:54580/';
     var GET_ALL_BOOKS = 'Books/all';
     var GET_BOOKS_BY_GENRE = 'Books/genre';
     var GET_BOOKS_BY_AUTHOR = 'Books/author';

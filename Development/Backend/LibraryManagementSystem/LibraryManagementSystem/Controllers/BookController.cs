@@ -28,7 +28,7 @@ namespace LibraryManagementSystem.Controllers
             {
                 using (LMSEntities entities = new LMSEntities())
                 {
-                    var entity = entities.Books.FirstOrDefault(e => e.BookId == id);
+                    var entity = entities.Books.First(e => e.BookId == id);
                     if (entity != null)
                     {
                         return Request.CreateResponse(HttpStatusCode.OK, entity);
@@ -52,7 +52,7 @@ namespace LibraryManagementSystem.Controllers
             {
                 using (LMSEntities entities = new LMSEntities())
                 {
-                    var entity = entities.Books.FirstOrDefault(e => e.BookName == bookName);
+                    var entity = entities.Books.First(e => e.BookName == bookName);
                     if (entity != null)
                     {
                         return Request.CreateResponse(HttpStatusCode.OK, entity);
@@ -95,7 +95,7 @@ namespace LibraryManagementSystem.Controllers
             {
                 using (LMSEntities entities = new LMSEntities())
                 {
-                    var entity = entities.Books.FirstOrDefault(e => e.BookId == id);
+                    var entity = entities.Books.First(e => e.BookId == id);
                     if (entity == null)
                     {
                         return Request.CreateErrorResponse(HttpStatusCode.NotFound,
@@ -122,7 +122,7 @@ namespace LibraryManagementSystem.Controllers
             {
                 using (LMSEntities entities = new LMSEntities())
                 {
-                    var entity = entities.Books.FirstOrDefault(e => e.BookId == id);
+                    var entity = entities.Books.First(e => e.BookId == id);
                     if (entity == null)
                     {
                         return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book with id =" + id.ToString() + "is not found to update");
@@ -152,7 +152,7 @@ namespace LibraryManagementSystem.Controllers
             {
                 using (LMSEntities entities = new LMSEntities())
                 {
-                    var entity = entities.Books.FirstOrDefault(e => e.BookId == id);
+                    var entity = entities.Books.First(e => e.BookId == id);
                     if (entity == null)
                     {
                         return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Book with id =" + id.ToString() + "is not found to update");

@@ -1,7 +1,7 @@
 angular.module('AdminModule').service('AdminService', ['$http', '$cookies', function ($http, $cookies) {
 
     var DOMAIN_NAME = 'http://localhost:54580/';
-    var ADMIN_STATUS = 'users/admin';
+    var ADMIN_STATUS = '';
 
     this.serviceWorks = function () {
         console.log("admin service works");

@@ -18,7 +18,7 @@ namespace LibraryDataAccess
         public LMSEntities()
             : base("name=LMSEntities")
         {
-            Configuration.ProxyCreationEnabled = false;
+            this.Configuration.LazyLoadingEnabled = true;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -26,9 +26,14 @@ namespace LibraryDataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<OrderTable> OrderTables { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Wishlist> Wishlists { get; set; }
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

@@ -12,15 +12,13 @@ namespace LibraryDataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderTable
+    public partial class AspNetUserClaim
     {
-        public int OrderId { get; set; }
+        public int Id { get; set; }
         public string UserId { get; set; }
-        public int BookId { get; set; }
-        public string Status { get; set; }
-        public System.DateTime OrderDate { get; set; }
-        public System.DateTime ReturnDate { get; set; }
+        public string ClaimType { get; set; }
+        public string ClaimValue { get; set; }
     
-        public virtual Book Book { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

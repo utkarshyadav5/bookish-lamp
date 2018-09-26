@@ -1,9 +1,9 @@
 angular.module('WishlistModule').service('WishlistService', ['$http', '$cookies', function ($http, $cookies) {
 
-    // send session id with the request
-    $http.defaults.headers.common.SessionId = $cookies.get('session-id');
+    var token = $cookies.get('access-token');
+    $http.defaults.headers.common['Authorization'] = "Bearer " + token;
 
-    var DOMAIN_NAME = 'http://localhost:59684/';
+    var DOMAIN_NAME = 'http://localhost:54580/api/';
     var WISHLIST = 'user/wishlist';
 
     this.serviceWorks = function () {

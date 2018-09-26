@@ -5,13 +5,21 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ace4d1cd745b4702af3ec425e6fed9c4" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="LMSModel.Account" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="LMSModel.Book" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="LMSModel.OrderTable" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSModel.Role" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <AssociationConnector Association="LMSModel.FK__Account__UserRol__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="LMSModel.FK__OrderTabl__UserI__412EB0B6" ManuallyRouted="false" />
         <AssociationConnector Association="LMSModel.FK__OrderTabl__BookI__403A8C7D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LMSModel.Wishlist" Width="1.5" PointX="5.25" PointY="5.25" />
+        <AssociationConnector Association="LMSModel.FK__Wishlist__BookId__76969D2E" />
+        <EntityTypeShape EntityType="LMSModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="LMSModel.AspNetRole" Width="1.5" PointX="7.75" PointY="2.5" />
+        <EntityTypeShape EntityType="LMSModel.AspNetUserClaim" Width="1.5" PointX="12.25" PointY="3.625" />
+        <EntityTypeShape EntityType="LMSModel.AspNetUserLogin" Width="1.5" PointX="12.25" PointY="1" />
+        <EntityTypeShape EntityType="LMSModel.AspNetUser" Width="1.5" PointX="10" PointY="1.25" />
+        <EntityTypeShape EntityType="LMSModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.75" />
+        <AssociationConnector Association="LMSModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="LMSModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="LMSModel.FK__Wishlist__UserId__778AC167" />
+        <AssociationConnector Association="LMSModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

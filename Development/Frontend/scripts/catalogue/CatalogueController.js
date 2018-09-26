@@ -1,4 +1,4 @@
-angular.module('CatalogueModule').controller('CatalogueController', ['$window', '$scope', 'catalogueService', '$interval', 'AdminService', function ($window, $scope, catalogueService, $interval, AdminService) {
+angular.module('CatalogueModule').controller('CatalogueController', ['$window', '$scope', '$cookies' ,'catalogueService', '$interval', 'AdminService', function ($window, $scope, $cookies, catalogueService, $interval, AdminService) {
 
     var BOOK_LIST_INTERVAL_IN_SECONDS = 3;
 
@@ -21,15 +21,7 @@ angular.module('CatalogueModule').controller('CatalogueController', ['$window', 
     };
 
     $scope.getGenresAsACommaSeperatedString = function (genres) {
-        let output = "";
-
-        for (var i in genres) {
-            output += "" + genres[i];
-
-            if (i < genres.length - 1)
-                output += ",";
-        }
-        return output;
+        return genres;
     };
 
     $scope.routeToAddBooksForm = function () {
@@ -59,7 +51,7 @@ angular.module('CatalogueModule').controller('CatalogueController', ['$window', 
     
     // fetch all books once at page reload
     getAllBooks();
-    console.log($scope.booksList);
+    //console.log($scope.booksList);
 
     // periodically refresh books
     // $interval(getAllBooks, BOOK_LIST_INTERVAL_IN_SECONDS * 1000);

@@ -5,7 +5,6 @@ D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\bi
 D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\bin\Debug\EntityFramework.SqlServer.dll
 D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\bin\Debug\EntityFramework.xml
 D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\bin\Debug\EntityFramework.SqlServer.xml
-D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.csprojAssemblyReference.cache
 D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.csproj.CoreCompileInputs.cache
 D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.csproj.CopyComplete
 D:\bookish-lamp\Development\Backend\LibraryManagementSystem\LibraryDataAccess\obj\Debug\LibraryDataAccess.dll

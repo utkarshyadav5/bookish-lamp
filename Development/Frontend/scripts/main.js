@@ -129,7 +129,7 @@ app.controller("MainController", ['$scope', '$cookies', function ($scope, $cooki
     };
 
     $scope.isUserAdmin = function () {
-        return ($cookies.get('admin-status') == "true");
+        return ($cookies.get('admin-status') == "Admin");
     };
 
     $scope.getCurrentUserEmailId = function () {

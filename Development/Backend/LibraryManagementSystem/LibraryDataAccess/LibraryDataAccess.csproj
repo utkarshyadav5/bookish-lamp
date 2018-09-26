@@ -49,10 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs">
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>LibraryDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>LibraryDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>LibraryDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
       <DependentUpon>LibraryDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Book.cs">
+      <DependentUpon>LibraryDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>LibraryDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LibraryDataModel.Context.cs">
@@ -74,7 +86,10 @@
       <DependentUpon>LibraryDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role.cs">
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>LibraryDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Wishlist.cs">
       <DependentUpon>LibraryDataModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

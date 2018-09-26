@@ -44,10 +44,24 @@ namespace LibraryManagementSystem.Providers
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,
                 CookieAuthenticationDefaults.AuthenticationType);
 
-            AuthenticationProperties properties = CreateProperties(user.UserName);
+            string roles = oAuthIdentity.Claims.First(c => c.Type == ClaimTypes.Role).Value;
+            string NameIdentifier = oAuthIdentity.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            AuthenticationProperties properties = CreateProperties(NameIdentifier,user.UserName,roles);
+
             AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
             context.Validated(ticket);
             context.Request.Context.Authentication.SignIn(cookiesIdentity);
+        }
+
+        public static AuthenticationProperties CreateProperties(string userID,string userName, string Roles)
+        {
+            IDictionary<string, string> data = new Dictionary<string, string>
+            {
+                { "userId", userID },
+                { "userName", userName },
+                { "roles" , Roles}
+            };
+            return new AuthenticationProperties(data);
         }
 
         public override Task TokenEndpoint(OAuthTokenEndpointContext context)
