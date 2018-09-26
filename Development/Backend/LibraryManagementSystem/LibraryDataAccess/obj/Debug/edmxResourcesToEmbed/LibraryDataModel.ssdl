@@ -77,7 +77,7 @@
       <PropertyRef Name="OrderId" />
     </Key>
     <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="BookId" Type="int" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="OrderDate" Type="date" Nullable="false" />
@@ -102,7 +102,7 @@
     <Property Name="BookId" Type="int" Nullable="false" />
     <Property Name="OrderDate" Type="date" Nullable="false" />
   </EntityType>
-  <Association Name="FK__OrderTabl__BookI__71D1E811">
+  <Association Name="FK__OrderTabl__BookI__7C4F7684">
     <End Role="Book" Type="Self.Book" Multiplicity="1" />
     <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="*" />
     <ReferentialConstraint>
@@ -114,7 +114,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Wishlist__BookId__76969D2E">
+  <Association Name="FK__OrderTabl__UserI__7D439ABD">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+    <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderTable">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Wishlist__BookId__01142BA1">
     <End Role="Book" Type="Self.Book" Multiplicity="1" />
     <End Role="Wishlist" Type="Self.Wishlist" Multiplicity="*" />
     <ReferentialConstraint>
@@ -126,7 +138,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Wishlist__UserId__778AC167">
+  <Association Name="FK__Wishlist__UserId__02084FDA">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
     <End Role="Wishlist" Type="Self.Wishlist" Multiplicity="*" />
     <ReferentialConstraint>
@@ -205,15 +217,19 @@
     <EntitySet Name="OrderTable" EntityType="Self.OrderTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Wishlist" EntityType="Self.Wishlist" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__OrderTabl__BookI__71D1E811" Association="Self.FK__OrderTabl__BookI__71D1E811">
+    <AssociationSet Name="FK__OrderTabl__BookI__7C4F7684" Association="Self.FK__OrderTabl__BookI__7C4F7684">
       <End Role="Book" EntitySet="Book" />
       <End Role="OrderTable" EntitySet="OrderTable" />
     </AssociationSet>
-    <AssociationSet Name="FK__Wishlist__BookId__76969D2E" Association="Self.FK__Wishlist__BookId__76969D2E">
+    <AssociationSet Name="FK__OrderTabl__UserI__7D439ABD" Association="Self.FK__OrderTabl__UserI__7D439ABD">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="OrderTable" EntitySet="OrderTable" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Wishlist__BookId__01142BA1" Association="Self.FK__Wishlist__BookId__01142BA1">
       <End Role="Book" EntitySet="Book" />
       <End Role="Wishlist" EntitySet="Wishlist" />
     </AssociationSet>
-    <AssociationSet Name="FK__Wishlist__UserId__778AC167" Association="Self.FK__Wishlist__UserId__778AC167">
+    <AssociationSet Name="FK__Wishlist__UserId__02084FDA" Association="Self.FK__Wishlist__UserId__02084FDA">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="Wishlist" EntitySet="Wishlist" />
     </AssociationSet>

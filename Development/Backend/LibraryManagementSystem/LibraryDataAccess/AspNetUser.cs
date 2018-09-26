@@ -21,6 +21,7 @@ namespace LibraryDataAccess
             this.AspNetUserLogins = new HashSet<AspNetUserLogin>();
             this.Wishlists = new HashSet<Wishlist>();
             this.AspNetRoles = new HashSet<AspNetRole>();
+            this.OrderTables = new HashSet<OrderTable>();
         }
     
         public string Id { get; set; }
@@ -44,5 +45,7 @@ namespace LibraryDataAccess
         public virtual ICollection<Wishlist> Wishlists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderTable> OrderTables { get; set; }
     }
 }

@@ -22,5 +22,6 @@ namespace LibraryDataAccess
         public System.DateTime ReturnDate { get; set; }
     
         public virtual Book Book { get; set; }
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

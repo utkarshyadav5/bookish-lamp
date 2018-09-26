@@ -19,7 +19,7 @@ namespace LibraryDataAccess
         public int BookId { get; set; }
         public System.DateTime OrderDate { get; set; }
     
-        public virtual Book Book { get; set; }
         public virtual AspNetUser AspNetUser { get; set; }
+        public virtual Book Book { get; set; }
     }
 }
