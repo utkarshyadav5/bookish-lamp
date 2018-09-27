@@ -56,9 +56,11 @@ angular.module('CatalogueModule').controller('CatalogueController', ['$window', 
     // periodically refresh books
     // $interval(getAllBooks, BOOK_LIST_INTERVAL_IN_SECONDS * 1000);
 
-    $scope.issueBook = function (bookId) {
+    $scope.issueBook = function (book) {
+        var bookId = book.BookId;
         console.log("issue book " + bookId);
         catalogueService.makeBookIssueRequest({ "BookId": bookId });
+        catalogueService.decreaseCount(book);
 
         // decrement quantity
         // for (var i in $scope.booksList) {

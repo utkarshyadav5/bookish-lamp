@@ -16,7 +16,7 @@ angular.module('CatalogueModule').service('catalogueService', ['$http', '$cookie
     var GET_USERS_FOR_BOOK = 'book/users';
 
     var MAKE_BOOK_ISSUE_REQUEST = 'order';
-    var ADD_TO_WISHLIST = 'user/wishlist';
+    var ADD_TO_WISHLIST = 'wishlists';
 
     this.foo = function () {
         console.log("Catalogue Service works...");
@@ -46,8 +46,18 @@ angular.module('CatalogueModule').service('catalogueService', ['$http', '$cookie
         return $http.post(DOMAIN_NAME + MAKE_BOOK_ISSUE_REQUEST, JSON.stringify(bookDetails));
     }
 
+    this.decreaseCount = function (bookDetails) {
+        //console.log(bookDetails);
+        if (bookDetails.AvailableNumber != 0){
+            bookDetails.AvailableNumber--;
+            return $http.put(DOMAIN_NAME + GET_ALL_BOOKS + '/' + bookDetails.BookId, JSON.stringify(bookDetails));
+        }
+    }
+
     this.addToWishList = function (bookDetails) {
-        // console.log(bookDetails);
+        bookDetails.UserId = $cookies.get('user-id');
+        bookDetails.OrderDate = new Date().toDateString("yyyy/MM/dd");
+        console.log(bookDetails);
         return $http.post(DOMAIN_NAME + ADD_TO_WISHLIST, JSON.stringify(bookDetails));
     };
 

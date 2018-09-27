@@ -4,7 +4,7 @@ angular.module('WishlistModule').service('WishlistService', ['$http', '$cookies'
     $http.defaults.headers.common['Authorization'] = "Bearer " + token;
 
     var DOMAIN_NAME = 'http://localhost:54580/api/';
-    var WISHLIST = 'user/wishlist';
+    var WISHLIST = 'wishlists';
 
     this.serviceWorks = function () {
         console.log("wishlist service works");
@@ -12,7 +12,6 @@ angular.module('WishlistModule').service('WishlistService', ['$http', '$cookies'
 
     this.getAllBooksForCurrentUser = function () {
         // send email-id with the request-header
-        $http.defaults.headers.common.EmailId = $cookies.get('logged-in-email-id');
         return $http.get(DOMAIN_NAME + WISHLIST);
     };
 }]);
