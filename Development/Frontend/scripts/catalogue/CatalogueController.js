@@ -3,22 +3,22 @@ angular.module('CatalogueModule').controller('CatalogueController', ['$window', 
     var BOOK_LIST_INTERVAL_IN_SECONDS = 3;
 
     $scope.booksList = [];
-    $scope.searchBookBy = 'Title';
-    $scope.search = {
-        Title: "",
-        Author: "",
-        Genre: ""
-    };
+    // $scope.searchBookBy = 'Title';
+    // $scope.search = {
+    //     Title: "",
+    //     Author: "",
+    //     Genre: ""
+    // };
 
     // clears previous search inputs
-    $scope.clearSearchFields = function () {
-        switch ($scope.searchBookBy) {
-            case 'Title': $scope.search.Author = ''; $scope.search.Genre = ''; break;
-            case 'Author': $scope.search.Title = ''; $scope.search.Genre = ''; break;
-            case 'Genre': $scope.search.Author = ''; $scope.search.Title = ''; break;
-            default: $scope.search.Title = $scope.searchBookInput; $scope.search.Author = ''; $scope.search.Genre = '';
-        }
-    };
+    // $scope.clearSearchFields = function () {
+    //     switch ($scope.searchBookBy) {
+    //         case 'Title': $scope.search.Author = ''; $scope.search.Genre = ''; break;
+    //         case 'Author': $scope.search.Title = ''; $scope.search.Genre = ''; break;
+    //         case 'Genre': $scope.search.Author = ''; $scope.search.Title = ''; break;
+    //         default: $scope.search.Title = $scope.searchBookInput; $scope.search.Author = ''; $scope.search.Genre = '';
+    //     }
+    // };
 
     $scope.getGenresAsACommaSeperatedString = function (genres) {
         return genres;

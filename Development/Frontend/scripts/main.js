@@ -4,9 +4,7 @@ var app = angular.module("App", ['ngRoute', 'ngCookies',
     'CatalogueModule',
     'LoginModule',
     'RegisterModule',
-    'NotificationModule',
     'AdminModule',
-    'BookShelfModule',
     'RequestModule',
     'WishlistModule'
 ]);
@@ -41,17 +39,6 @@ app.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
         })
         .when('/home/catalogue', {
             templateUrl: 'views/catalogue/catalogue.html',
-            resolve: {
-                app: function ($q) {
-                    var defer = $q.defer();
-                    if (isLoggedIn())
-                        defer.resolve();
-                    return defer.promise;
-                }
-            }
-        })
-        .when('/home/bookshelf', {
-            templateUrl: 'views/bookshelf/bookshelf.html',
             resolve: {
                 app: function ($q) {
                     var defer = $q.defer();

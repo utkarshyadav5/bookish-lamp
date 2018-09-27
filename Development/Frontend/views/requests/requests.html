@@ -1,14 +1,34 @@
 <div ng-controller='RequestController'>
 
-    <ul class='list-group'>
-        <li class='list-group-item' ng-repeat='rental in pendingRentalsList'>
-            User : {{rental.UserId}} wishes to issue Book with Id : {{rental.BookId}} 
-            Status : {{rental.Status}}
-            <span class="float-right">
-                <button class="btn btn-success" ng-click="approve(rental)" ng-if="rental.Status == 'Waiting'">Approve</button>
-                <button class="btn btn-danger" ng-click="reject(rental)" ng-if="rental.Status == 'Waiting'">Reject</button>
-            </span>
-        </li>
-    </ul>
+    <br>
+    <div>
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" ng-model="search">
+    </div>
+
+    <div style="text-align:center; margin: 10px;">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Book ID</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="rental in pendingRentalsList | filter:search">
+                    <td>{{rental.UserId}}</td>
+                    <td>{{rental.BookId}}</td>
+                    <td>{{rental.Status}}</td>
+                    <td>
+                        <span style="margin-left:40px;">
+                            <button class="btn btn-success" ng-click="approve(rental)" ng-if="rental.Status == 'Waiting'">Approve</button>
+                            <button class="btn btn-danger" ng-click="reject(rental)" ng-if="rental.Status == 'Waiting'">Reject</button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </div>
