@@ -24,9 +24,16 @@ namespace LibraryManagementSystem.Controllers
             return db.OrderTables;
         }
 
+        // GET: api/Order?status=
+        [Authorize(Roles = "Admin")]
+        public IQueryable<OrderTable> GetOrderByStatus(string status)
+        {
+            return db.OrderTables.Where(e => e.Status.Equals(status));
+        }
+
         // GET: api/Order/5
         [Authorize]
-        public IQueryable<OrderTable> GetOrderByUserId(int id)
+        public IQueryable<OrderTable> GetOrderByUserId(string id)
         {
             return db.OrderTables.Where(e => e.UserId.Equals(id));
         }
@@ -45,7 +52,7 @@ namespace LibraryManagementSystem.Controllers
         //}
 
         // PUT: api/Order/5
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutOrderTable(int id, OrderTable orderTable)
         {

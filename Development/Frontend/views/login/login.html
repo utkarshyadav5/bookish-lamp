@@ -1,32 +1,3 @@
-<!-- <div ng-controller="LoginController">
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <form name="LoginForm" ng-submit="login()" novalidate>
-                <div class="form-group">
-                    <label for="Email Address">Email Address:</label>
-                    <input class="form-control" name="username" type="email" placeholder="Enter your email" ng-model="loginDetails.username"
-                        required>
-                    <span style="color:red" ng-show="LoginForm.username.$dirty && LoginForm.username.$invalid">
-                        <span ng-show="LoginForm.username.$error.required">Email is required.</span>
-                        <span ng-show="LoginForm.username.$error.email">Invalid email address.</span>
-                </div>
-                <div class="form-group">
-                    <label for="Password">Password:</label>
-                    <input class="form-control" name="password" type="password" placeholder="Enter your Password" ng-model="loginDetails.Password"
-                        required>
-                    <span style="color:red" ng-show="LoginForm.password.$dirty && LoginForm.password.$invalid">
-                        <span ng-show="LoginForm.password.$error.required">Password is required.</span>
-                </div>
-                <button type="submit" class="btn btn-primary" ng-disabled="LoginForm.username.$invalid || 
-                                                                           LoginForm.password.$invalid"> Login </button>
-            </form>
-        </div>
-    </div>
-</div> -->
-
-
-
-
 <html>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -43,16 +14,29 @@
            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
            <!--img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
            <p id="profile-name" class="profile-name-card"></p>-->
-           <img src="views/login/avatar.png" class="profile-img-card">
+           <!-- <img src="views/login/avatar.png" class="profile-img-card"> -->
            <form class="form-signin" name="LoginForm" ng-submit="login()" novalidate>
-               <span id="reauth-email" class="reauth-email"></span>
-               <input class="form-control" name="username" type="email" id="inputEmail"  placeholder="Enter your Email" ng-model="loginDetails.username" required autofocus>
-               <span style="color:red" ng-show="LoginForm.username.$dirty && LoginForm.username.$invalid">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend" style="height:44px;">
+                        <span class="input-group-text"><i class="fa fa-user" aria-hidden="true" style="color:#555e68"></i></span>
+                    </div>
+                    <input class="form-control" name="username" type="email" id="inputEmail" placeholder="Enter your Email" ng-model="loginDetails.username"
+                        required autofocus>
+                </div>
+               
+               <span style="color:white" ng-show="LoginForm.username.$dirty && LoginForm.username.$invalid">
                  <span ng-show="LoginForm.username.$error.required">Email is required.</span>
                  <span ng-show="LoginForm.username.$error.email">Invalid email address.</span>
                </span>
-               <input class="form-control" name="password" type="password" id="inputPassword" placeholder="Password" ng-model="loginDetails.Password" required>
-               <span style="color:red" ng-show="LoginForm.password.$dirty && LoginForm.password.$invalid">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend" style="height:44px;">
+                        <span class="input-group-text"><i class="fa fa-lock" aria-hidden="true" style="color:#555e68"></i></span>
+                    </div>
+                    <input class="form-control" name="password" type="password" id="inputPassword" placeholder="Password" ng-model="loginDetails.Password"
+                        required>
+                </div>
+               <span style="color:white" ng-show="LoginForm.password.$dirty && LoginForm.password.$invalid">
                 <span ng-show="LoginForm.password.$error.required">Password is required.</span>
                 </span>
                <!-- <div id="remember" class="checkbox">
@@ -60,8 +44,8 @@
                        <input type="checkbox" value="remember-me"> Remember me
                    </label>
                </div> -->
-               <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" ng-disabled="LoginForm.username.$invalid ||
-                                                                           LoginForm.password.$invalid">Sign in</button>
+               <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" ng-disabled="LoginForm.username.$invalid || LoginForm.password.$invalid">Sign In</button>
+               <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign Up</button>
            </form>
            <!-- <a href="#" class="forgot-password">
                Forgot the password?
@@ -69,3 +53,5 @@
        </div>
    </div>
 </body>
+
+

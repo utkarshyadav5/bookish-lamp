@@ -17,25 +17,34 @@ namespace LibraryManagementSystem.Controllers
         private LMSEntities db = new LMSEntities();
 
         // GET: api/Wishlists
+        [Authorize(Roles = "Admin")]
         public IQueryable<Wishlist> GetWishlists()
         {
             return db.Wishlists;
         }
 
-        // GET: api/Wishlists/5
-        [ResponseType(typeof(Wishlist))]
-        public IHttpActionResult GetWishlist(int id)
+        // GET: api/Order/5
+        [Authorize]
+        public IQueryable<Wishlist> GetWishlistByUserId(string id)
         {
-            Wishlist wishlist = db.Wishlists.Find(id);
-            if (wishlist == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(wishlist);
+            return db.Wishlists.Where(e => e.UserId.Equals(id));
         }
 
+        //// GET: api/Wishlists/5
+        //[ResponseType(typeof(Wishlist))]
+        //public IHttpActionResult GetWishlist(int id)
+        //{
+        //    Wishlist wishlist = db.Wishlists.Find(id);
+        //    if (wishlist == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(wishlist);
+        //}
+
         // PUT: api/Wishlists/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutWishlist(int id, Wishlist wishlist)
         {
@@ -71,6 +80,7 @@ namespace LibraryManagementSystem.Controllers
         }
 
         // POST: api/Wishlists
+        [Authorize]
         [ResponseType(typeof(Wishlist))]
         public IHttpActionResult PostWishlist(Wishlist wishlist)
         {
@@ -86,6 +96,7 @@ namespace LibraryManagementSystem.Controllers
         }
 
         // DELETE: api/Wishlists/5
+        [Authorize]
         [ResponseType(typeof(Wishlist))]
         public IHttpActionResult DeleteWishlist(int id)
         {

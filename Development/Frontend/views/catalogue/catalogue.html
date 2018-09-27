@@ -29,9 +29,10 @@
     <!-- </form> -->
 
     <br>
-    <div>
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search" ng-model="search">
-    </div>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ng-model="search">
+        <button class='btn btn-primary' ng-if='isUserAdmin()' ng-click="routeToAddBooksForm()" style="float: right;">Add Book</button>
+    </form>
 
     <div class="row">
         <div ng-repeat="book in booksList | filter:search">
@@ -40,9 +41,8 @@
                     <div class="card-body" style="text-align:center">
                         <h5 class="card-title" ng-model="selectedBookTitle">{{book.BookName}}</h5>
                         <p class="card-text">by {{book.Author}}
-                            <br/> Genres: {{getGenresAsACommaSeperatedString(book.Genre)}}
-                            <br> Total: {{book.Quantity}}
-                            <br> Available: {{book.AvailableNumber}}
+                            <br/> Genres: {{book.Genre}}
+                            <br/> <span ng-if='isUserAdmin()'> Available: {{book.AvailableNumber}} </span>
                         </p>
                         <div style="margin:5px">
                             <button class="btn btn-primary" ng-click="issueBook(book)" ng-disabled="book.AvailableNumber==0" style="margin:4px">Get this book</button>

@@ -115,7 +115,7 @@ namespace LibraryManagementSystem.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public HttpResponseMessage putBook(int id, [FromBody] Book book)
         {
             try

@@ -2,6 +2,13 @@
 
     <br>
     <div>
+        <button class='btn btn-primary' ng-if='isUserAdmin()' ng-click="getAll()" style="width: 24.5%;">All</button>
+        <button class='btn btn-primary' ng-if='isUserAdmin()' ng-click="getPending()" style="width: 24.5%;">Pending Request</button>
+        <button class='btn btn-primary' ng-if='isUserAdmin()' ng-click="getApproved()" style="width: 24.5%;">Approved Request</button>
+        <button class='btn btn-primary' ng-if='isUserAdmin()' ng-click="getRejected()" style="width: 24.5%;">Rejected Request</button>
+    </div>
+    <br>
+    <div>
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" ng-model="search">
     </div>
 
@@ -21,9 +28,12 @@
                     <td>{{rental.BookId}}</td>
                     <td>{{rental.Status}}</td>
                     <td>
-                        <span style="margin-left:40px;">
+                        <span ng-if='isUserAdmin()' style="margin-left:40px;">
                             <button class="btn btn-success" ng-click="approve(rental)" ng-if="rental.Status == 'Waiting'">Approve</button>
                             <button class="btn btn-danger" ng-click="reject(rental)" ng-if="rental.Status == 'Waiting'">Reject</button>
+                        </span>
+                        <span ng-if='!isUserAdmin()' style="margin-left:10px;">
+                            <button class="btn btn-success" ng-click="return(rental)" ng-if="rental.Status == 'Approved'">Return</button>
                         </span>
                     </td>
                 </tr>

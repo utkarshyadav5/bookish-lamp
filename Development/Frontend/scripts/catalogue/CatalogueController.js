@@ -3,22 +3,6 @@ angular.module('CatalogueModule').controller('CatalogueController', ['$window', 
     var BOOK_LIST_INTERVAL_IN_SECONDS = 3;
 
     $scope.booksList = [];
-    // $scope.searchBookBy = 'Title';
-    // $scope.search = {
-    //     Title: "",
-    //     Author: "",
-    //     Genre: ""
-    // };
-
-    // clears previous search inputs
-    // $scope.clearSearchFields = function () {
-    //     switch ($scope.searchBookBy) {
-    //         case 'Title': $scope.search.Author = ''; $scope.search.Genre = ''; break;
-    //         case 'Author': $scope.search.Title = ''; $scope.search.Genre = ''; break;
-    //         case 'Genre': $scope.search.Author = ''; $scope.search.Title = ''; break;
-    //         default: $scope.search.Title = $scope.searchBookInput; $scope.search.Author = ''; $scope.search.Genre = '';
-    //     }
-    // };
 
     $scope.getGenresAsACommaSeperatedString = function (genres) {
         return genres;
@@ -33,6 +17,7 @@ angular.module('CatalogueModule').controller('CatalogueController', ['$window', 
         console.log($scope.bookDetails);
         catalogueService.addBook($scope.bookDetails);
         $window.location.href = "#!/home/catalogue";
+        getAllBooks();
     };
 
     function getAllBooks() {
@@ -61,13 +46,6 @@ angular.module('CatalogueModule').controller('CatalogueController', ['$window', 
         console.log("issue book " + bookId);
         catalogueService.makeBookIssueRequest({ "BookId": bookId });
         catalogueService.decreaseCount(book);
-
-        // decrement quantity
-        // for (var i in $scope.booksList) {
-        //     if (i.Title == bookName && i.Quantity != 0) {
-        //         i.Quantity--;
-        //     }
-        // }
     }
 
     $scope.addToWishList = function (bookId) {

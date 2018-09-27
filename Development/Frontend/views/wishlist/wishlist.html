@@ -2,15 +2,22 @@
 
     <div class="container">
         <div class="row">
-            <div ng-repeat='entry in wishlistRecords'>
+            <div ng-repeat='book in wishlistRecords'>
 
 
                 <div class='col-sm-12'>
-                    <div class='card text-white bg-dark' style='margin:10px'>
+                    <div class='card text-white bg-dark' style='text-align: center;'>
                         <div class='card-body'>
-                            <h5 class="card-title" ng-model="selectedBookTitle">{{entry.BookId}}</h5>
-                            <!-- <p class="card-text" stl>{{entry.BookId}}</p> -->
-                            <button class='btn btn-primary'>Available</button>
+                            <h5 class="card-title" ng-model="selectedBookTitle">{{book.Book.BookName}}</h5>
+                            <p class="card-text">by {{book.Book.Author}}
+                            <br /> Genres: {{book.Book.Genre}}
+                            <div style="margin:5px">
+                                <button class="btn btn-primary" ng-click="issueBook(book.Book)" ng-disabled="book.Book.AvailableNumber==0" style="margin:4px">Get
+                                    this book</button>
+                            </div>
+                            <div style="margin:5px">
+                                <button class="btn btn-primary" ng-click="removeFromWishList(book.WishListId)">Remove from wishlist</button>
+                            </div>
                         </div>
                     </div>
                 </div>
