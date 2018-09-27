@@ -2,10 +2,11 @@
 
     <ul class='list-group'>
         <li class='list-group-item' ng-repeat='rental in pendingRentalsList'>
-            {{rental.UserName}} wishes to issue {{rental.BookName}}
+            User : {{rental.UserId}} wishes to issue Book with Id : {{rental.BookId}} 
+            Status : {{rental.Status}}
             <span class="float-right">
-                <button class="btn btn-success" ng-click="approve(rental)">Approve</button>
-                <button class="btn btn-danger" ng-click="reject(rental)">Reject</button>
+                <button class="btn btn-success" ng-click="approve(rental)" ng-if="rental.Status == 'Waiting'">Approve</button>
+                <button class="btn btn-danger" ng-click="reject(rental)" ng-if="rental.Status == 'Waiting'">Reject</button>
             </span>
         </li>
     </ul>

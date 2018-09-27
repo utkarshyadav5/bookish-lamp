@@ -6,10 +6,9 @@ angular.module('RequestModule').service('RequestService', ['$http', '$cookies', 
     // send email-id with the request-header
     $http.defaults.headers.common.EmailId = $cookies.get('logged-in-email-id');
 
-    var DOMAIN_NAME = 'http://localhost:54580/api/';
-    var GET_PENDING_REQUESTS = 'order';
-    var REJECT_REQUEST = 'reject-request';
-    var APPROVE_REQUEST = 'approve-request';
+    var DOMAIN_NAME = 'http://localhost:54580/api/order';
+    var GET_PENDING_REQUESTS = '';
+    var REQUEST = "/"
 
     this.serviceWorks = function () {
         console.log("request service works");
@@ -20,10 +19,14 @@ angular.module('RequestModule').service('RequestService', ['$http', '$cookies', 
     };
 
     this.reject = function (rentalDetails) {
-        return $http.put(DOMAIN_NAME + REJECT_REQUEST, JSON.stringify(rentalDetails));
+        var OrderId = rentalDetails.OrderId;
+        console.log(OrderId);
+        return $http.put(DOMAIN_NAME + REQUEST + OrderId, JSON.stringify(rentalDetails));
     };
 
     this.approve = function (rentalDetails) {
-        return $http.put(DOMAIN_NAME + APPROVE_REQUEST, JSON.stringify(rentalDetails));
+        var OrderId = rentalDetails.OrderId;
+        console.log(OrderId);
+        return $http.put(DOMAIN_NAME + REQUEST + OrderId, JSON.stringify(rentalDetails));
     };
 }]);

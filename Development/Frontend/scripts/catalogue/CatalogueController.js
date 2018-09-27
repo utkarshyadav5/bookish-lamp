@@ -68,9 +68,9 @@ angular.module('CatalogueModule').controller('CatalogueController', ['$window', 
         // }
     }
 
-    $scope.addToWishList = function (bookName) {
-        console.log("Adding " + bookName + " to wishlist");
-        catalogueService.addToWishList({ 'Title': bookName });
+    $scope.addToWishList = function (bookId) {
+        console.log("Adding " + bookId + " to wishlist");
+        catalogueService.addToWishList({ "BookId": bookId });
     };
 
     // $scope.isUserAdmin = function () {

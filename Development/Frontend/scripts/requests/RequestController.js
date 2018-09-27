@@ -14,13 +14,17 @@ angular.module('RequestModule').controller('RequestController', ['$scope', 'Requ
         );
 
     $scope.approve = function (rentalDetails) {
+        rentalDetails.Status = "Approved";
         console.log(rentalDetails);
         RequestService.approve(rentalDetails);
+        RequestService.getPendingRequests();
     };
 
     $scope.reject = function (rentalDetails) {
+        rentalDetails.Status = "Rejected";
         console.log(rentalDetails);
         RequestService.reject(rentalDetails);
+        RequestService.getPendingRequests()
     };
 
 }]);
